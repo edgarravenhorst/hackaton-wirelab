@@ -55,7 +55,7 @@ IPMIFramework.Tracking.PersonUpdatedSignal.add(function(person) {
     return;
   }
 
-  gotoPosition(centroidX, centroidY);
+  gotoPosition(centroidX*0.8 + 0.1, centroidY);
 });
 IPMIFramework.Tracking.PersonLeftSignal.add(function(person) {
   // Handle logic to be executed when a person leaves the scene
