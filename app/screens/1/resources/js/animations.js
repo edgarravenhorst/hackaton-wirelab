@@ -29,7 +29,6 @@ let circularMotion = function(selector, time, rad, repeat=0){
   });
 };
 
-circularMotion("#plane", 4, 50, -1);
 circularMotion("#water1", 3, 10, -1);
 circularMotion("#water2", 2, -10, -1);
 circularMotion("#water3", 2, 10, -1);
@@ -62,7 +61,7 @@ animations.logo = {
     this.state = 'show';
 
     TweenMax.killChildTweensOf(logo);
-    TweenMax.to(logoEl, 2, {y: 500, ease: Elastic.easeOut});
+    TweenMax.to(logoEl, 2, {y: 500, scaleX:1, scaleY:1, ease: Elastic.easeOut});
 
     logo.removeClass(this.className);
     this.className = 'logo-' + mode;
@@ -75,7 +74,7 @@ animations.logo = {
     this.state = 'hide';
 
     TweenMax.killChildTweensOf(logo);
-    TweenMax.to(logo, 1, {y:-500, ease: Back.easeIn});
+    TweenMax.to(logo, 1, {y:0, scaleX:0.4, scaleY:0.4, ease: Elastic.easeOut});
   }
 };
 
