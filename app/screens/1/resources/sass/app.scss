@@ -31,7 +31,7 @@ html, body {
   left:-50px;
   transform-origin: bottom left;
   bottom:-200px;
-  transform: scaleY(0.7);
+  transform: scale(0.7);
 }
 
 #grass2{
@@ -170,8 +170,8 @@ html, body {
   width:1300px;
   position: absolute;
   bottom:350px;
-  left:2700px;
-  transform: rotate(01deg) scaleX(0.8);
+  left:1600px;
+  transform: rotate(01deg) scaleX(0.6);
   .wave{
     position: absolute;
     bottom:0;
