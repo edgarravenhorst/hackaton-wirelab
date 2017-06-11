@@ -72,7 +72,7 @@ IPMIFramework.Tracking.PersonUpdatedSignal.add(function(person) {
 
   if (!targetPerson) {
 	  targetPerson = person;
-	  sounds.newPerson(centroidX);
+	  sounds.start(centroidX);
   }
   if (targetPerson.id !== person.id) {
     return;
@@ -86,6 +86,6 @@ IPMIFramework.Tracking.PersonLeftSignal.add(function(person) {
 
   if (targetPerson.id === person.id) {
     targetPerson = null;
-    sounds.personLeft();
+    sounds.stop();
   }
 });

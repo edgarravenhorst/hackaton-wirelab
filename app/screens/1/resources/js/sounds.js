@@ -2,6 +2,8 @@ const Howl = require('howler').Howl;
 
 class Sounds {
 
+	isTracking = false;
+
 	rooster;
 	birds;
 
@@ -32,7 +34,9 @@ class Sounds {
 		});
 	}
 
-	newPerson(position) {
+	start(position) {
+		this.isTracking = true;
+
 		if (position < .5) {
 			this.rooster.play();
 			this.birds.fade(this.birds.volume(), 1, 2000);
@@ -44,11 +48,15 @@ class Sounds {
 	}
 
 	update(position) {
+		if (!this.isTracking) {
+			return;
+		}
 		this.birds.volume((position * 1.5) * -1 + 1);
 		this.crickets.volume((position * 1.25) - .25);
 	}
 
-	personLeft() {
+	stop() {
+		this.isTracking = false;
 		this.crickets.fade(this.crickets.volume(), 0, 2000);
 		this.birds.fade(this.birds.volume(), 0, 2000);
 	}
