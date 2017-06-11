@@ -36,7 +36,7 @@ circularMotion("#water3", 2, 10, -1);
 circularMotion("#boat", 3, 10, -1);
 circularMotion("#zappelin", 3, 10, -1);
 
-TweenMax.to("#zon", 2, {scaleX:1.3, scaleY:1.3, repeat:-1, yoyo:true, ease: Power2.easeInOut});
+TweenMax.to("#zon", 2, {scaleX:1.5, scaleY:1.5, repeat:-1, yoyo:true, ease: Power2.easeInOut});
 TweenMax.to("#maan", 5, {scaleX:1.1, scaleY:1.1, repeat:-1, yoyo:true, ease: Power2.easeInOut});
 
 let logoEl = document.getElementById("logo");
