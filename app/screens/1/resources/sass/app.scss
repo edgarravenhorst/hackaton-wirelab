@@ -102,16 +102,23 @@ html, body {
   width: 175px;
 }
 
+#tree-layer {
+  position: absolute;
+}
 #tree {
   position: absolute;
   left: 14300px;
   bottom: 65px;
 }
+#dreamText {
+  position: absolute;
+  left: 14850px;
+  bottom: 1200px;
+}
 #catepillars {
   position: absolute;
   left: 14960px;
   bottom: 310px;
-  z-index: 1000;
 }
 
 #zon, #maan {
