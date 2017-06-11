@@ -12,7 +12,7 @@ html, body {
 }
 
 #sky{
-  background: #7777FF;
+  background-image: linear-gradient(-180deg, #3023AE 0%, #53A0FE 47%, #B4ED50 100%);
 }
 
 #darkness{
@@ -26,34 +26,26 @@ html, body {
 
 #grass1{
   position: absolute;
-  bottom:250px;
-  height:25%;
-  transform: scaleX(3);
-  transform-origin: bottom left;
+  width:250%;
   left:-50px;
+  transform-origin: bottom left;
+  bottom:-300px;
+  transform: scaleY(0.7);
 }
 
 #grass2{
   position: absolute;
-  bottom:250px;
-  height:100%;
-  left:-50px;
+  bottom:0;
+  width:150%;
+  transform: rotate(-2deg);
+
+  transform: scaleY(0.7);
 }
 
-#grass-layer:after{
-  content: " ";
-  bottom:-100px;;
-  background: #60b451;
-  left:0;
+#bomen{
   position: absolute;
-  height: 400px;
-  width: 1000%;
-}
-
-#bergen1, #bergen2, #bomen{
-  position: absolute;
-  bottom:450px;
-  width: 90%;
+  bottom:500px;
+  width: 70%;
 }
 
 .clouds{
@@ -92,8 +84,8 @@ html, body {
 }
 
 #plane-content{
-    top:30%;
-    left:1500px;
+  top:30%;
+  left:1500px;
 }
 
 #vuurtoren{
@@ -138,11 +130,11 @@ html, body {
 }
 
 #water{
-  width:4000px;
+  width:1300px;
   position: absolute;
-  bottom:-100px;
-  left:4400px;
-  transform: rotate(0.2deg);
+  bottom:250px;
+  left:2700px;
+  transform: rotate(01deg) scaleX(0.8);
   .wave{
     position: absolute;
     bottom:0;
@@ -154,12 +146,12 @@ html, body {
   }
   #water2{
     transform:scaleY(0.4);
-    bottom:100px;
+    bottom:60px;
   }
   #water3{
     transform:scaleY(0.4);
-    bottom:150px;
-    left:-300px;
+    bottom:100px;
+    left:-100px;
   }
   #boat{
     width:600px;

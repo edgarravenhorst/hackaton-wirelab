@@ -50,6 +50,7 @@ IPMIFramework.Tracking.PersonUpdatedSignal.add(function(person) {
 	  targetPerson = person;
 	  sounds.start(centroidX);
   }
+
   if (targetPerson.id !== person.id) {
     return;
   }

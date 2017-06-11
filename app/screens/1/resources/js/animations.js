@@ -28,9 +28,6 @@ let circularMotion = function(selector, time, rad, repeat=0){
   });
 };
 
-circularMotion("#clouds1", 4, 30, -1);
-circularMotion("#clouds2", 4, -20, -1);
-circularMotion("#clouds3", 4, 10, -1);
 circularMotion("#plane", 4, 50, -1);
 circularMotion("#water1", 3, 10, -1);
 circularMotion("#water2", 2, -10, -1);
