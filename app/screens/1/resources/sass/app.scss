@@ -49,29 +49,6 @@ html, body {
   width: 90%;
 }
 
-.clouds{
-  width:100%;
-  position: absolute;
-  top:0%;
-}
-
-#clouds1 {
-  opacity: 0.7;
-  top:-5%;
-}
-
-#clouds2 {
-  opacity: 0.5;
-  top:20%;
-}
-
-#clouds3 {
-  opacity: 0.4;
-  top:20%;
-}
-
-#clouds {
-}
 .cloud {
   position: absolute;
 }
@@ -88,6 +65,36 @@ html, body {
 .cloud11 {
   top: 700px;
   left: 950px;
+}
+.cloud12 {
+  top: 700px;
+  left: 950px;
+}
+.cloud13 {
+  top: 500px;
+  left: 1500px;
+}
+.cloud13 {
+  top: 200px;
+  left: 1800px;
+}
+
+.painting {
+  position: absolute;
+}
+#startPainting1 {
+  top: 1100px;
+  left: 100px;
+}
+#startPainting2 {
+  top: 1050px;
+  left: 650px;
+  transform: scale(.7);
+}
+#startPainting3 {
+  top: 1000px;
+  left: 800px;
+  transform: scaleX(-1);
 }
 
 #plane{
