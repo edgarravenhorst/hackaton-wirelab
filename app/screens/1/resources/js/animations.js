@@ -3,7 +3,7 @@ import {TimelineMax, TweenMax, Power2, TimelineLite} from "gsap";
 
 //TweenMax(document.getElementById("clouds"), 1, {})
 
-var circularMotion = function(selector, time, rad, repeat=0){
+let circularMotion = function(selector, time, rad, repeat=0){
   let tl = new TimelineMax({ repeat: repeat, repeatDelay: 0, delay: 0 });
   tl.to(selector, time, {
     bezier: {
@@ -17,7 +17,7 @@ var circularMotion = function(selector, time, rad, repeat=0){
     },
     ease: Linear.easeNone
   });
-}
+};
 
 circularMotion("#clouds1", 4, 30, -1);
 circularMotion("#clouds2", 4, -20, -1);

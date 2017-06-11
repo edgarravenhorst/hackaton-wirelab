@@ -40,7 +40,7 @@ module.exports = {
       open: 'external',
       host: 'localhost',
       proxy: 'localhost:8081',
-      files: ['dist/**', 'resources/images/**', 'index.html']
+      files: ['dist/**', 'resources/images/**', 'resources/sounds/**', 'index.html']
     }),
     new ExtractTextPlugin({ filename: 'app.css', disable: false, allChunks: true }),
     // new webpack.optimize.UglifyJsPlugin({
