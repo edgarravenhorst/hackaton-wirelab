@@ -1,0 +1,196 @@
+html, body {
+  background: #000;
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+  margin:0;
+  padding:0;
+}
+
+#sky{
+  background: #7777FF;
+}
+
+#darkness{
+  background: #000033;
+}
+
+#scene{
+  width: 100%;
+  height: 100%;
+}
+
+#grass1{
+  position: absolute;
+  bottom:250px;
+  height:25%;
+  transform: scaleX(3);
+  transform-origin: bottom left;
+  left:-50px;
+}
+
+#grass2{
+  position: absolute;
+  bottom:250px;
+  height:100%;
+  left:-50px;
+}
+
+#grass-layer:after{
+  content: " ";
+  bottom:-100px;;
+  background: #60b451;
+  left:0;
+  position: absolute;
+  height: 400px;
+  width: 1000%;
+}
+
+#bergen1, #bergen2, #bomen{
+  position: absolute;
+  bottom:450px;
+  width: 90%;
+}
+
+.clouds{
+  width:100%;
+  position: absolute;
+  top:0%;
+}
+
+#clouds1 {
+  opacity: 0.7;
+  top:-5%;
+}
+
+#clouds2 {
+  opacity: 0.5;
+  top:20%;
+}
+
+#clouds3 {
+  opacity: 0.4;
+  top:20%;
+}
+
+#plane{
+  position: absolute;
+  left:3000px;
+  top:15%;
+  width: 1400px;
+}
+
+#zappelin{
+  position: absolute;
+  left:1700px;
+  top:-5%;
+  width: 400px;
+}
+
+#plane-content{
+    top:30%;
+    left:1500px;
+}
+
+#vuurtoren{
+  position: absolute;
+  left:4300px;
+  bottom:630px;
+  width: 175px;
+}
+
+#tree {
+  position: absolute;
+  height:140%;
+  left:18300px;
+  bottom:0;
+}
+
+#zon, #maan {
+  position: absolute;
+  height:600px;
+}
+
+#maan{
+  //left:1000px;
+}
+
+#solar{
+  width:4000px;
+  height:600px;
+  position: absolute;
+  top:90%;
+  margin-left:-2000px;
+
+  #zon {
+    left:-100px;
+    top:-400px;
+  }
+  #maan {
+    height:1800px;
+    right:-600px;
+    top:-200px;
+  }
+}
+
+#water{
+  width:4000px;
+  position: absolute;
+  bottom:-100px;
+  left:4400px;
+  transform: rotate(0.2deg);
+  .wave{
+    position: absolute;
+    bottom:0;
+    opacity: 0.8;
+  }
+  #water1{
+    transform:scaleY(0.4);
+    bottom:80px;
+  }
+  #water2{
+    transform:scaleY(0.4);
+    bottom:100px;
+  }
+  #water3{
+    transform:scaleY(0.4);
+    bottom:150px;
+    left:-300px;
+  }
+  #boat{
+    width:600px;
+    position: absolute;
+    bottom:420px;
+    left:1600px;
+  }
+}
+
+#raket{
+  position: absolute;
+  right:1300px;
+  width:200px;
+  transform: rotate(60deg);
+}
+
+.layer{
+  height: 100%;
+  width: 6000px;
+}
+
+#mask{
+  position: fixed;
+  top:0;
+  left:0;
+}
+
+.content{
+  position: absolute;
+  font-family: Arial;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50px;
+  padding:70px;
+  width:450px;
+  font-size:2em;
+  h2{margin-top:0}
+  p{margin-bottom:0}
+}

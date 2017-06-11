@@ -1,55 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Motion visualization demo</title>
-    <style type="text/css">
-      #visualizer {
-        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-        bottom: 5px;
-        position: absolute;
-        right: 5px;
-        width: 250px;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="visualizer"></canvas>
+<head>
+  <title>Motion visualization demo</title>
+  <link rel="stylesheet" href="dist/app.css">
+</head>
+<body>
 
-    <script src="js/ipmi.min.js"></script>
-    <script>
-      // Setup configuration for motion tracking
-      var config = {
-        tracking: { 
-          hostaddr: 'ipmi.wirelab.nl', 
-          hostport: 4000, 
-          hostpath: '/secret/noorderhagen', 
-          method: IPMI.TrackingMethod.TSPS
-        }
-      };
+  <div id="scene">
+    <div id="sky" class="layer" data-depth="0.00"></div>
 
-      // Activate debugmode (leave out to use regular mode)
-      IPMI.Tools.DEBUG = true;
+    <div class="layer" data-depth="0.1">
+      <img id="bergen2" src="resources/images/bergen-1.svg">
+    </div>
 
-      // Initialize the client framework
-      var IPMIFramework = new IPMI.Framework(config);
+    <div class="layer" data-depth="0.15">
+      <img id="bergen1" src="resources/images/bergen-2.svg">
+    </div>
+    <div class="layer" data-depth="0.20">
+      <img width="100%" id="clouds1" class="clouds" src="resources/images/clouds-1.svg">
+      <img width="100%" id="clouds2" class="clouds" src="resources/images/clouds-2.svg">
+      <img width="100%" id="clouds3" class="clouds" src="resources/images/clouds-3.svg">
+    </div>
 
-      // Create tracking visualizer
-      var visualizer = new IPMI.TrackingVisualizer(IPMIFramework.Tracking, document.querySelector('#visualizer'));
+    <div class="layer" data-depth="0.2">
+      <img id="bomen" src="resources/images/bomen.svg">
+    </div>
 
-      // Example signal bindings
-      IPMIFramework.Tracking.SceneUpdatedSignal.add(function(scene) {
-        // Handle logic that needs to use scene data
-      });
+    <div class="layer" data-depth="0.3">
+      <img id="grass2" src="resources/images/gras-achter.svg">
+    </div>
 
-      IPMIFramework.Tracking.PersonEnteredSignal.add(function(person) {
-        // Handle logic to be executed when a person enters the scene
-      });
-      IPMIFramework.Tracking.PersonUpdatedSignal.add(function(person) {
-        // Handle logic to be executed when a person moves within the scene
-      });
-      IPMIFramework.Tracking.PersonLeftSignal.add(function(person) {
-        // Handle logic to be executed when a person leaves the scene
-      });
-    </script>
-  </body>
+
+
+    <div class="layer" data-depth="0.20">
+      <img id="zappelin" src="resources/images/zappelin.svg">
+    </div>
+
+    <div class="layer" data-depth="0.30">
+      <div id="plane-content" class="content">
+        <h2>De droom van het vliegen.</h2>
+        <p>De droom om los te komen van de aarde om op eigen kracht door het lichtruim te suizen achtervolgt ons al eeuwen.</p>
+      </div>
+    </div>
+
+    <div class="layer" data-depth="0.60">
+      <img id="plane" src="resources/images/vliegtuig.svg">
+    </div>
+
+    <div id="grass-layer" class="layer" data-depth="0.6">
+      <div id="water">
+        <img id="water3" class="wave" src="resources/images/water-3.svg">
+        <img id="water2" class="wave" src="resources/images/water-2.svg">
+        <img id="boat" src="resources/images/boot-01.svg">
+        <img id="water1" class="wave" src="resources/images/water-1.svg">
+      </div>
+
+      <img id="vuurtoren" src="resources/images/vuurtoren.svg">
+      <img id="grass1" src="resources/images/gras-1.svg">
+    </div>
+
+    <div class="layer" data-depth="0.10">
+      <img id="raket" src="resources/images/raket.svg">
+    </div>
+
+    <div id="darkness" class="layer" data-depth="0.00"></div>
+
+    <div class="layer" data-depth="0">
+      <div id="solar">
+        <img id="maan" src="resources/images/maan.svg">
+        <img id="zon" src="resources/images/zon.svg">
+      </div>
+    </div>
+    <div class="layer" data-depth="1">
+      <img id="tree" src="resources/images/boom-insect.svg">
+    </div>
+
+  </div>
+
+  <img id="mask" src="resources/images/ramen-01.svg">
+
+  <script src="lib/js/ipmi.min.js"></script>
+  <script src="dist/app.js"></script>
+
+</body>
 </html>
