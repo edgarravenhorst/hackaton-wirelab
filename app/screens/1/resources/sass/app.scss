@@ -38,8 +38,6 @@ html, body {
   bottom:50px;
   width:150%;
   transform: rotate(-2deg);
-
-  transform: scaleY(0.7);
 }
 
 #bomen{
@@ -76,24 +74,6 @@ html, body {
 .cloud13 {
   top: 200px;
   left: 1800px;
-}
-
-.painting {
-  position: absolute;
-}
-#startPainting1 {
-  top: 1100px;
-  left: 100px;
-}
-#startPainting2 {
-  top: 1050px;
-  left: 650px;
-  transform: scale(.7);
-}
-#startPainting3 {
-  top: 1000px;
-  left: 800px;
-  transform: scaleX(-1);
 }
 
 #plane{
