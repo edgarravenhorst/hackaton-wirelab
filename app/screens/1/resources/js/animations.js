@@ -1,4 +1,5 @@
 const Parallax = require('parallax-js');
+const $ = require('jquery');
 import {TimelineMax, TweenMax, Power2, TimelineLite} from "gsap";
 
 let scene = document.getElementById('scene');
@@ -35,9 +36,11 @@ circularMotion("#water3", 2, 10, -1);
 circularMotion("#boat", 3, 10, -1);
 circularMotion("#zappelin", 3, 10, -1);
 
-TweenMax.to("#zon", 1, {scaleX:1.4, scaleY:1.4, repeat:-1, yoyo:true, ease: Linear.easeNone});
-TweenMax.to("#maan", 5, {scaleX:1.1, scaleY:1.1, repeat:-1, yoyo:true, ease: Linear.easeNone});
+TweenMax.to("#zon", 2, {scaleX:1.3, scaleY:1.3, repeat:-1, yoyo:true, ease: Power2.easeInOut});
+TweenMax.to("#maan", 5, {scaleX:1.1, scaleY:1.1, repeat:-1, yoyo:true, ease: Power2.easeInOut});
 
+let logoEl = document.getElementById("logo");
+let logo = $(logoEl);
 
 let sky = document.getElementById("sky");
 let darkness = document.getElementById("darkness");
@@ -46,12 +49,32 @@ let clouds2 = document.getElementById("clouds2");
 let clouds3 = document.getElementById("clouds3");
 let solar = document.getElementById("solar");
 
-
 let animations = {};
 
 animations.logo = {
-  showStart: function() {
+  state: null,
+  className: null,
+  show: function(mode) {
+    if (this.state === 'show') {
+      return;
+    }
+    this.state = 'show';
 
+    TweenMax.killChildTweensOf(logo);
+    TweenMax.to(logoEl, 2, {y: 650, ease: Elastic.easeOut});
+
+    logo.removeClass(this.className);
+    this.className = 'logo-' + mode;
+    logo.addClass(this.className);
+  },
+  hide: function() {
+    if (this.state === 'hide') {
+      return;
+    }
+    this.state = 'hide';
+
+    TweenMax.killChildTweensOf(logo);
+    TweenMax.to(logo, 1, {y:-500, ease: Back.easeIn});
   }
 };
 
@@ -69,8 +92,13 @@ animations.scene = {
     TweenMax.to(solar, 1, {rotation:solarRotation});
     //solar.style.transform = "rotate(" + solarRotation + "deg)";
 
-    if (positionX < .05) {
-
+    let logoDayTime = positionX < .05;
+    let logoNighttime = positionX > .95;
+    if (logoDayTime || logoNighttime) {
+	    animations.logo.show(logoDayTime ? 'daytime' : 'nighttime');
+    }
+    else {
+      animations.logo.hide();
     }
   }
 };

@@ -1,5 +1,6 @@
 .logo {
 	position: absolute;
+	left: 250px;
 
 	display: inline-block;
 	text-align: center;
@@ -8,6 +9,10 @@
 	h1, h2 {
 		text-transform: uppercase;
 		margin: 0;
+
+		span {
+			display: block;
+		}
 	}
 
 	h1 {
@@ -44,5 +49,20 @@
 	}
 	.date {
 		color: #002a67;
+	}
+}
+
+.logo-nighttime {
+	-webkit-transform: rotate(4deg);
+
+	h1 {
+		color: #fff;
+		border-bottom-color: #fff;
+	}
+	h2 {
+		color: #fbba00;
+	}
+	.date {
+		color: #fff;
 	}
 }
