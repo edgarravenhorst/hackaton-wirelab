@@ -104,9 +104,14 @@ html, body {
 
 #tree {
   position: absolute;
-  height:140%;
-  left:18300px;
-  bottom:0;
+  left: 14300px;
+  bottom: 65px;
+}
+#catepillars {
+  position: absolute;
+  left: 14960px;
+  bottom: 310px;
+  z-index: 1000;
 }
 
 #zon, #maan {
@@ -173,7 +178,7 @@ html, body {
     width:350px;
     position: absolute;
     left: 450px;
-    bottom: 130px;
+    bottom: 230px;
   }
 }
 
