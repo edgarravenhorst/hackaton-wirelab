@@ -80,8 +80,8 @@ animations.logo = {
 
 animations.scene = {
   render: function(positionX, positionY) {
-    sky.style.opacity = 1.2- positionX*1080/window.innerWidth;
-    darkness.style.opacity = -0.3 + positionX*1080/window.innerWidth;
+    sky.style.opacity = (-1.5 + (positionX*1080/window.innerWidth)) * -1;
+    darkness.style.opacity = -1.5 + (positionX*1080/window.innerWidth * 2);
     //clouds1.style.opacity = 0.7- positionX*1080/window.innerWidth;
     //clouds2.style.opacity = 0.7- positionX*1080/window.innerWidth;
     //clouds3.style.opacity = 0.7- positionX*1080/window.innerWidth;
