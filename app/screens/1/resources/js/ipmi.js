@@ -64,5 +64,8 @@ IPMIFramework.Tracking.PersonLeftSignal.add(function(person) {
   if (targetPerson.id === person.id) {
     targetPerson = null;
     sounds.stop();
+
+    let centroidX = person.centroid.x;
+    gotoPosition(centroidX > .5 ? 1 : 0, 0);
   }
 });
