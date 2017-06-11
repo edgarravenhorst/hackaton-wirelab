@@ -1,0 +1,48 @@
+.logo {
+	position: absolute;
+
+	display: inline-block;
+	text-align: center;
+	font-family: Galindo;
+
+	h1, h2 {
+		text-transform: uppercase;
+		margin: 0;
+	}
+
+	h1 {
+		border-bottom: solid 10px #fbba00;
+		font-size: 150px;
+		line-height: 150px;
+
+		.games {
+			font-size: 145px;
+		}
+	}
+
+	h2 {
+		margin-top: 40px;
+		font-size: 95px;
+		line-height: 80px;
+	}
+
+	.date {
+		font-size: 48px;
+		margin: 0;
+	}
+}
+
+.logo-daytime {
+	-webkit-transform: rotate(-4deg);
+
+	h1 {
+		color: #c90a21;
+		border-bottom-color: #c90a21;
+	}
+	h2 {
+		color: #fbba00;
+	}
+	.date {
+		color: #002a67;
+	}
+}
