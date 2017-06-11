@@ -38,7 +38,10 @@
 }
 
 .logo-daytime {
-	-webkit-transform: rotate(-4deg);
+
+	.logo-container {
+		transform: rotate(-4deg);
+	}
 
 	h1 {
 		color: #c90a21;
@@ -53,7 +56,9 @@
 }
 
 .logo-nighttime {
-	-webkit-transform: rotate(4deg);
+	.logo-container {
+		transform: rotate(4deg);
+	}
 
 	h1 {
 		color: #fff;
