@@ -30,8 +30,7 @@ html, body {
   width:250%;
   left:-50px;
   transform-origin: bottom left;
-  bottom:-200px;
-  transform: scale(0.7);
+  bottom:-600px;
 }
 
 #grass2{
@@ -169,9 +168,9 @@ html, body {
 #water{
   width:1300px;
   position: absolute;
-  bottom:350px;
-  left:1600px;
-  transform: rotate(01deg) scaleX(0.6);
+  bottom:300px;
+  left:2600px;
+  transform: rotate(01deg);
   .wave{
     position: absolute;
     bottom:0;
