@@ -10,7 +10,7 @@ let config = {
     hostaddr: 'ipmi.wirelab.nl',
     hostport: 4000,
     hostpath: '/secret/noorderhagen',
-    method: IPMI.TrackingMethod.Mouse,
+    method: IPMI.TrackingMethod.TSPS,
     pointerTarget: document.body,
   }
 };
