@@ -48,6 +48,7 @@ let clouds1 = document.getElementById("clouds1");
 let clouds2 = document.getElementById("clouds2");
 let clouds3 = document.getElementById("clouds3");
 let solar = document.getElementById("solar");
+let stars = document.getElementById("stars");
 
 let animations = {};
 
@@ -61,7 +62,7 @@ animations.logo = {
     this.state = 'show';
 
     TweenMax.killChildTweensOf(logo);
-    TweenMax.to(logoEl, 2, {y: 650, ease: Elastic.easeOut});
+    TweenMax.to(logoEl, 2, {y: 500, ease: Elastic.easeOut});
 
     logo.removeClass(this.className);
     this.className = 'logo-' + mode;
@@ -82,6 +83,7 @@ animations.scene = {
   render: function(positionX, positionY) {
     sky.style.opacity = (-1.5 + (positionX*1080/window.innerWidth)) * -1;
     darkness.style.opacity = -1.5 + (positionX*1080/window.innerWidth * 2);
+    stars.style.opacity = -1.0 + (positionX*1080/window.innerWidth * 2);
     //clouds1.style.opacity = 0.7- positionX*1080/window.innerWidth;
     //clouds2.style.opacity = 0.7- positionX*1080/window.innerWidth;
     //clouds3.style.opacity = 0.7- positionX*1080/window.innerWidth;

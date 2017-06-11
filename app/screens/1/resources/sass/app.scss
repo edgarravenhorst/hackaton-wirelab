@@ -70,6 +70,26 @@ html, body {
   top:20%;
 }
 
+#clouds {
+}
+.cloud {
+  position: absolute;
+}
+
+.cloud1 {
+  top: 450px;
+  left: 200px;
+  transform: scaleX(2) scaleY(2);
+}
+.cloud2 {
+  top: 900px;
+  left: 150px;
+}
+.cloud11 {
+  top: 700px;
+  left: 950px;
+}
+
 #plane{
   position: absolute;
   left:3000px;
@@ -134,7 +154,7 @@ html, body {
   }
   #maan {
     height:1800px;
-    right:-600px;
+    right:-800px;
     top:-200px;
   }
 }
