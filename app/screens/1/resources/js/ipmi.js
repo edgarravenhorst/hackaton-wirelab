@@ -38,6 +38,23 @@ let solar = document.getElementById("solar");
 
 let targetPerson;
 
+function gotoPosition(positionX, positionY) {
+	sounds.update(positionX);
+
+	sky.style.opacity = 1.2- positionX*1080/window.innerWidth;
+	darkness.style.opacity = -0.3 + positionX*1080/window.innerWidth;
+	clouds1.style.opacity = 0.7- positionX*1080/window.innerWidth;
+	clouds2.style.opacity = 0.7- positionX*1080/window.innerWidth;
+	clouds3.style.opacity = 0.7- positionX*1080/window.innerWidth;
+	parallax.inputX = (positionX*1080 - parallax.windowCenterX) / parallax.windowRadiusX;
+	parallax.inputY = (positionY*1920 - parallax.windowCenterY) / parallax.windowRadiusY;
+
+	let solarRotation = -positionX*180 + 100;
+	TweenMax.to(solar, 1, {rotation:solarRotation});
+	//solar.style.transform = "rotate(" + solarRotation + "deg)";
+}
+gotoPosition(0);
+
 // Example signal bindings
 IPMIFramework.Tracking.SceneUpdatedSignal.add(function(scene) {
   //console.log(scene)
@@ -51,7 +68,8 @@ IPMIFramework.Tracking.PersonEnteredSignal.add(function(person) {
 });
 IPMIFramework.Tracking.PersonUpdatedSignal.add(function(person) {
   let centroidX = person.centroid.x;
-  
+  let centroidY = person.centroid.y;
+
   if (!targetPerson) {
 	  targetPerson = person;
 	  sounds.newPerson(centroidX);
@@ -59,22 +77,8 @@ IPMIFramework.Tracking.PersonUpdatedSignal.add(function(person) {
   if (targetPerson.id !== person.id) {
     return;
   }
-  
-  sounds.update(centroidX);
 
-  sky.style.opacity = 1.2- centroidX*1080/window.innerWidth;
-  darkness.style.opacity = -0.3 + centroidX*1080/window.innerWidth;
-  clouds1.style.opacity = 0.7- centroidX*1080/window.innerWidth;
-  clouds2.style.opacity = 0.7- centroidX*1080/window.innerWidth;
-  clouds3.style.opacity = 0.7- centroidX*1080/window.innerWidth;
-  parallax.inputX = (centroidX*1080 - parallax.windowCenterX) / parallax.windowRadiusX;
-  parallax.inputY = (person.centroid.y*1920 - parallax.windowCenterY) / parallax.windowRadiusY;
-
-  let solarRotation = -centroidX*180 + 100;
-  TweenMax.to(solar, 1, {rotation:solarRotation});
-  //solar.style.transform = "rotate(" + solarRotation + "deg)";
-
-  // Handle logic to be executed when a person moves within the scene
+  gotoPosition(centroidX, centroidY);
 });
 IPMIFramework.Tracking.PersonLeftSignal.add(function(person) {
   // Handle logic to be executed when a person leaves the scene
