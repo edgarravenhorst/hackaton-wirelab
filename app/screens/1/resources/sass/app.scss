@@ -22,6 +22,7 @@ html, body {
 #scene{
   width: 100%;
   height: 100%;
+  img{position: absolute;}
 }
 
 #grass1{
@@ -29,13 +30,13 @@ html, body {
   width:250%;
   left:-50px;
   transform-origin: bottom left;
-  bottom:-300px;
+  bottom:-200px;
   transform: scaleY(0.7);
 }
 
 #grass2{
   position: absolute;
-  bottom:0;
+  bottom:50px;
   width:150%;
   transform: rotate(-2deg);
 
@@ -45,7 +46,7 @@ html, body {
 #bomen{
   position: absolute;
   bottom:500px;
-  width: 70%;
+  width: 90%;
 }
 
 .clouds{
@@ -107,8 +108,17 @@ html, body {
   height:600px;
 }
 
-#maan{
-  //left:1000px;
+#fence{
+  position: absolute;
+  bottom:200px;
+  width:1100px;
+}
+
+#sponsors{
+  position: absolute;
+  bottom:0;
+  width:1100px;
+  z-index: 9999;
 }
 
 #solar{
@@ -132,7 +142,7 @@ html, body {
 #water{
   width:1300px;
   position: absolute;
-  bottom:250px;
+  bottom:350px;
   left:2700px;
   transform: rotate(01deg) scaleX(0.8);
   .wave{
@@ -174,8 +184,8 @@ html, body {
 }
 
 #mask{
-  position: fixed;
-  top:0;
+  position: absolute;
+  bottom:0;
   left:0;
 }
 
